@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bullquets Holdings</title>
-<meta name="description" content="Bullquets Holdings is a private group of design-led brands, home of Studio 5 architectural visualization." />
+<meta name="description" content="Bullquets Holdings is a private group of design-led brands, home of Studio 5 architectural visualization and ODD upcycled clothing and home goods." />
 <meta name="theme-color" content="#2b1a12" />
 <meta property="og:title" content="Bullquets Holdings" />
-<meta property="og:description" content="A private group of design-led brands. Home of Studio 5." />
+<meta property="og:description" content="A private group of design-led brands. Home of Studio 5 and ODD." />
 <meta property="og:image" content="https://qftsundzdunfvctsukvf.supabase.co/storage/v1/render/image/public/Portfolio/zzzen/japandi%20zen%20minimalist%20bedroom%20nigh%20stand%20large%20bed%20lamp%203d%20rendering%20interior%20design%20styling%20visualization%2002%20copy.jpg?width=1200&quality=80" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -259,7 +259,7 @@
     color: var(--brown);
   }
 
-  .studio5 {
+  .brand-card {
     position: relative;
     display: grid;
     grid-template-columns: 7fr 5fr;
@@ -267,8 +267,8 @@
     background: var(--brown-deep);
     color: var(--on-dark);
   }
-  .studio5-media { position: relative; overflow: hidden; }
-  .studio5-media img {
+  .brand-media { position: relative; overflow: hidden; }
+  .brand-media img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -276,14 +276,14 @@
     object-fit: cover;
     transition: transform 1.4s var(--ease);
   }
-  .studio5:hover .studio5-media img { transform: scale(1.03); }
-  .studio5-media::after {
+  .brand-card:hover .brand-media img { transform: scale(1.03); }
+  .brand-media::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(20,12,8,.0) 50%, rgba(20,12,8,.55) 100%);
   }
-  .studio5-media .studio5-mark {
+  .brand-media .brand-mark {
     inset: auto auto 28px 28px;
     z-index: 1;
     width: min(220px, 45%);
@@ -291,14 +291,14 @@
     object-fit: contain;
     transform: none !important;
   }
-  .studio5-body {
+  .brand-body {
     padding: clamp(28px, 3.4vw, 52px);
     display: flex;
     flex-direction: column;
     gap: 28px;
   }
-  .studio5-top { display: flex; justify-content: space-between; align-items: center; }
-  .studio5-top .eyebrow { color: var(--on-dark-muted); }
+  .brand-top { display: flex; justify-content: space-between; align-items: center; }
+  .brand-top .eyebrow { color: var(--on-dark-muted); }
   .status {
     display: inline-flex;
     align-items: center;
@@ -311,13 +311,13 @@
     padding: 6px 12px;
   }
   .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #9fd49a; }
-  .studio5 h3 {
+  .brand-card h3 {
     font-weight: 400;
     font-size: clamp(40px, 4.4vw, 68px);
     line-height: .9;
     letter-spacing: -.04em;
   }
-  .studio5-body > p { color: var(--on-dark-muted); font-size: 16px; line-height: 1.5; max-width: 420px; }
+  .brand-body > p { color: var(--on-dark-muted); font-size: 16px; line-height: 1.5; max-width: 420px; }
   .access { list-style: none; border-top: 1px solid rgba(243,237,230,.18); margin-top: auto; }
   .access a {
     display: flex;
@@ -331,7 +331,20 @@
   }
   .access a span:first-child small { color: var(--on-dark-muted); font-size: 13px; margin-left: 10px; }
   .access a:hover { padding-left: 8px; }
-  .studio5 .pill { align-self: flex-start; }
+  .brand-card .pill { align-self: flex-start; }
+  .brand-card + .brand-card { margin-top: 1px; }
+  .brand-media .brand-wordmark {
+    position: absolute;
+    left: 28px;
+    bottom: 22px;
+    z-index: 1;
+    font-size: clamp(44px, 5vw, 76px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -.02em;
+    color: var(--on-dark);
+  }
+  #odd .brand-media img { object-position: 72% center; }
 
   .next-brand {
     margin-top: 1px;
@@ -443,8 +456,8 @@
     .nav { grid-template-columns: 1fr auto; }
     .nav-links { display: none; }
     .about, .section-head, .manifesto, .contact { grid-template-columns: 1fr; }
-    .studio5, .next-brand { grid-template-columns: 1fr; }
-    .studio5-media { min-height: 56vw; }
+    .brand-card, .next-brand { grid-template-columns: 1fr; }
+    .brand-media { min-height: 56vw; }
     .next-brand > div:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
     .stats { grid-template-rows: auto; }
     .stat.blank { display: none; }
@@ -463,7 +476,7 @@
     .stat.feature { padding: 24px; }
     .contact-row { grid-template-columns: 1fr auto; }
     .contact-row .k { grid-column: 1 / -1; }
-    .studio5-media .studio5-mark { left: 20px; bottom: 20px; }
+    .brand-media .brand-mark, .brand-media .brand-wordmark { left: 20px; bottom: 20px; }
   }
 </style>
 </head>
@@ -489,6 +502,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#brands">Brands</a></li>
       <li><a href="#studio5">Studio 5</a></li>
+      <li><a href="#odd">ODD</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="nav-cta" href="https://www.wearestudio5.com" target="_blank" rel="noopener">Visit Studio 5 <span class="arrow">&#8599;</span></a>
@@ -560,15 +574,15 @@
       <h2>One standard.<br />Every brand.</h2>
     </div>
 
-    <article class="studio5 reveal" id="studio5">
-      <a class="studio5-media" href="https://www.wearestudio5.com" target="_blank" rel="noopener" aria-label="Visit Studio 5">
+    <article class="brand-card reveal" id="studio5">
+      <a class="brand-media" href="https://www.wearestudio5.com" target="_blank" rel="noopener" aria-label="Visit Studio 5">
         <img loading="lazy"
           src="https://qftsundzdunfvctsukvf.supabase.co/storage/v1/render/image/public/Portfolio/peace-among-the-cedars/apartment%20renovation%203%20renderings%20architectural%20visualization%20modern%20interior%20design%2003.jpg?width=1800&quality=80"
           alt="Modern kitchen and dining interior in oak and marble, Peace among the Cedars project by Studio 5" />
-        <img class="studio5-mark" src="https://qftsundzdunfvctsukvf.supabase.co/storage/v1/object/public/brand-assets/logo-banner.png" alt="Studio 5" />
+        <img class="brand-mark" src="https://qftsundzdunfvctsukvf.supabase.co/storage/v1/object/public/brand-assets/logo-banner.png" alt="Studio 5" />
       </a>
-      <div class="studio5-body">
-        <div class="studio5-top">
+      <div class="brand-body">
+        <div class="brand-top">
           <span class="eyebrow">01 &mdash; Architectural visualization</span>
           <span class="status">Active</span>
         </div>
@@ -584,9 +598,33 @@
       </div>
     </article>
 
+    <article class="brand-card reveal" id="odd">
+      <a class="brand-media" href="https://oddcycling.com" target="_blank" rel="noopener" aria-label="Visit ODD">
+        <img loading="lazy"
+          src="https://oddcycling.com/campaign/hero.jpg"
+          alt="Model seated on a wooden chair in a sunlit room, wearing a houndstooth blazer, tan trousers and brown loafers, ODD campaign" />
+        <span class="brand-wordmark" aria-hidden="true">ODD</span>
+      </a>
+      <div class="brand-body">
+        <div class="brand-top">
+          <span class="eyebrow">02 &mdash; Upcycled clothing &amp; home</span>
+          <span class="status">Active</span>
+        </div>
+        <h3>ODD</h3>
+        <p>Clothing and home goods made from secondhand garments and textiles. Most pieces are one of a kind, numbered and never restocked.</p>
+        <ul class="access" aria-label="ODD direct access">
+          <li><a href="https://oddcycling.com/en/shop/clothing" target="_blank" rel="noopener"><span>Clothing <small>One-of-a-kind pieces</small></span><span class="arrow">&#8599;</span></a></li>
+          <li><a href="https://oddcycling.com/en/shop/home" target="_blank" rel="noopener"><span>Home <small>Small-run goods</small></span><span class="arrow">&#8599;</span></a></li>
+          <li><a href="https://oddcycling.com/en/shop" target="_blank" rel="noopener"><span>All pieces <small>Shop everything</small></span><span class="arrow">&#8599;</span></a></li>
+          <li><a href="https://oddcycling.com/en/about" target="_blank" rel="noopener"><span>About <small>How it's made</small></span><span class="arrow">&#8599;</span></a></li>
+        </ul>
+        <a class="pill" href="https://oddcycling.com" target="_blank" rel="noopener">oddcycling.com <span class="arrow">&#8599;</span></a>
+      </div>
+    </article>
+
     <div class="next-brand reveal">
       <div>
-        <span class="idx">02</span>
+        <span class="idx">03</span>
         <h4>Next brand, in development</h4>
       </div>
       <div><p>Same standard. Different world. Announcing when it's ready, not before.</p></div>
@@ -615,6 +653,9 @@
       <a class="contact-row" href="https://www.wearestudio5.com/contact" target="_blank" rel="noopener">
         <span class="k">Studio 5 projects</span><span class="v">wearestudio5.com/contact</span><span class="arrow">&#8599;</span>
       </a>
+      <a class="contact-row" href="https://oddcycling.com/en/contact" target="_blank" rel="noopener">
+        <span class="k">ODD orders</span><span class="v">oddcycling.com/contact</span><span class="arrow">&#8599;</span>
+      </a>
       <div class="contact-row">
         <span class="k">Entity</span><span class="v">Bullquets Holdings LLC</span><span></span>
       </div>
@@ -626,7 +667,11 @@
   <svg class="logo footer-mark" viewBox="0 0 10262 2264" role="img" aria-label="Bullquets"><use href="#bullquets-logo"/></svg>
   <div class="footer-bar">
     <span>&copy; <span id="year">2026</span> Bullquets Holdings LLC. All rights reserved.</span>
-    <a href="https://www.wearestudio5.com" target="_blank" rel="noopener">Studio 5 <span class="arrow">&#8599;</span></a>
+    <span>
+      <a href="https://www.wearestudio5.com" target="_blank" rel="noopener">Studio 5 <span class="arrow">&#8599;</span></a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://oddcycling.com" target="_blank" rel="noopener">ODD <span class="arrow">&#8599;</span></a>
+    </span>
   </div>
 </footer>
 
